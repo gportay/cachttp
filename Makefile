@@ -12,6 +12,10 @@ run: PATH := $(CURDIR):$(PATH)
 run: libevent-server | cachttp.pem
 	libevent-server 10433 cachttp.key cachttp.pem
 
+.PHONY: get
+get:
+	curl -k https://localhost:10433/Makefile
+
 libevent-server: LDLIBS += -lssl -lcrypto -levent_openssl -levent -lnghttp2
 libevent-server:
 
