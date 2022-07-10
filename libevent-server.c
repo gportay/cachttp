@@ -2,6 +2,7 @@
  * nghttp2 - HTTP/2 C Library
  *
  * Copyright (c) 2013 Tatsuhiro Tsujikawa
+ *               2022 Gaël PORTAY
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -59,8 +60,10 @@
 #ifndef __sgi
 #  include <err.h>
 #endif
+#include <unistd.h>
 #include <string.h>
 #include <errno.h>
+#include <fcntl.h>
 
 #include <openssl/ssl.h>
 #include <openssl/err.h>
